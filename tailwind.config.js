@@ -1,11 +1,8 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-};
+	content: ['./src/**/*.{js,jsx,ts,tsx}'], // Actualiza esto para incluir los archivos correctos
+	darkMode: 'media', // O simplemente elimina la opción si no la necesitas
+	theme: {
+		extend: {}
+	},
+	plugins: []
+}

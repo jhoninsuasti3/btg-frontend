@@ -1,13 +1,13 @@
-import React from 'react';
-import TransactionHistory from '../components/TransactionHistory';
+import React from 'react'
+import TransactionHistory from '../components/TransactionHistory'
 
 const TransactionHistoryPage = () => {
-  return (
-    <div>
-      <h1>Historial de Transacciones</h1>
-      <TransactionHistory />
-    </div>
-  );
-};
+	return (
+		<div>
+			<h1>Historial de Transacciones</h1>
+			<TransactionHistory />
+		</div>
+	)
+}
 
-export default TransactionHistoryPage;
+export default TransactionHistoryPage

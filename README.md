@@ -45,9 +45,11 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Pasos
 
+npx prettier --write .
 
-## Libraries_
+## Libraries\_
+
 npm install prettier --save-dev
 npm install eslint-plugin-prettier --save-dev
-
