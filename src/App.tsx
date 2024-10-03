@@ -1,17 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './index.css';
+import './App.css';  // Si tienes algún estilo global
+import AppRoutes from './routes/AppRoutes';  // Importa las rutas
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Router>
-      <div>
-        <h1>Bienvenido a la plataforma de Fondos de BTG Pactual</h1>
-        <Routes>
-          {/* Aquí definirás tus rutas */}
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <AppRoutes />  {/* Renderiza todas las rutas */}
+    </div>
   );
 }
 
