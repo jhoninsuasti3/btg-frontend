@@ -47,12 +47,12 @@ export const cancelFundSubscription = async (data: {
 	return response.json()
 }
 
-export const getTransactionHistory = async (userId: number) => {
+export const getTransactions = async () => {
 	const response = await fetch(
-		`http://localhost:8000/api/transactions/history/${userId}`
+		'https://0ct5gepevj.execute-api.us-east-1.amazonaws.com/Develop/transactions'
 	)
 	if (!response.ok) {
-		throw new Error('Error al obtener el historial de transacciones')
+		throw new Error('Error al obtener las transacciones')
 	}
 	return response.json()
 }
