@@ -6,16 +6,22 @@ import {
 
 interface SubscribeCancelFormProps {
 	selectedFundId: string
+	investmentAmount: number
 }
 
 const SubscribeCancelForm: React.FC<SubscribeCancelFormProps> = ({
-	selectedFundId
+	selectedFundId,
+	investmentAmount
 }) => {
 	const [message, setMessage] = useState('')
 
 	const handleSubscribe = async () => {
 		try {
-			await subscribeToFund({ user_id: 1, fund_id: selectedFundId })
+			await subscribeToFund({
+				user_id: '73c035f3-8d9e-48e3-8b02-e6fdab26d928', // user_id fijo
+				fund_id: selectedFundId,
+				amount: investmentAmount
+			})
 			setMessage('Suscripción exitosa.')
 		} catch (error) {
 			setMessage('Error al suscribirse al fondo.')
@@ -24,7 +30,10 @@ const SubscribeCancelForm: React.FC<SubscribeCancelFormProps> = ({
 
 	const handleCancel = async () => {
 		try {
-			await cancelFundSubscription({ user_id: 1, fund_id: selectedFundId })
+			await cancelFundSubscription({
+				user_id: '73c035f3-8d9e-48e3-8b02-e6fdab26d928', // user_id fijo
+				fund_id: selectedFundId
+			})
 			setMessage('Cancelación exitosa.')
 		} catch (error) {
 			setMessage('Error al cancelar la suscripción.')
@@ -33,7 +42,10 @@ const SubscribeCancelForm: React.FC<SubscribeCancelFormProps> = ({
 
 	return (
 		<div>
-			<button onClick={handleSubscribe} disabled={!selectedFundId}>
+			<button
+				onClick={handleSubscribe}
+				disabled={!selectedFundId || investmentAmount <= 0}
+			>
 				Suscribirse
 			</button>
 			<button onClick={handleCancel} disabled={!selectedFundId}>
